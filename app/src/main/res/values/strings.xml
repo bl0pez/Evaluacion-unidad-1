@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Evaluacion 1</string>
+    <string name="title_activity_calculo_honorarios_screen">CalculoHonorariosScreen</string>
+    <string name="title_activity_honorarium_calculation">HonorariumCalculation</string>
+</resources>
