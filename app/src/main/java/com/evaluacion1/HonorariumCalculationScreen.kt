@@ -9,13 +9,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -37,8 +34,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
 class HonorariumCalculation : ComponentActivity() {
@@ -101,8 +96,8 @@ fun Screen() {
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Button(onClick = {
-                    val otro = salario.toDoubleOrNull() ?: 0.0
-                    val calcular = EmpleadoHonorarios(otro).calcularLiquido()
+                    val salario = salario.toDoubleOrNull() ?: 0.0
+                    val calcular = EmpleadoHonorarios(salario).calcularLiquido()
                     result = "El suedo es: $calcular"
                 }) {
                     Text(text = "Calcular")

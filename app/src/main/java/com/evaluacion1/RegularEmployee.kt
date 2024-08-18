@@ -1,8 +1,9 @@
 package com.evaluacion1
 
-class EmpleadoHonorarios(sueldoBruto: Double): Empleado(sueldoBruto) {
+class RegularEmployee(sueldoBruto: Double): Empleado(sueldoBruto) {
     override fun calcularLiquido(): Double {
-        val sueldo = sueldoBruto * 0.13;
+
+        val sueldo = sueldoBruto * 0.20;
         return sueldoBruto - sueldo;
     }
 }
