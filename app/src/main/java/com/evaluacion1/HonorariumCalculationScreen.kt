@@ -50,13 +50,14 @@ class HonorariumCalculation : ComponentActivity() {
 @Preview
 @Composable
 fun Screen() {
-
+    //Obtenemos el contexto actual para usarlo en la navegación
     val context = LocalContext.current;
 
+    // variables de estado para manejar el sueldo ingresado y el resultado
     var salario by remember { mutableStateOf("") }
     var result by remember { mutableStateOf("") }
 
-
+    //diseño de la pantalla con un fondo blanco y padding
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -64,8 +65,10 @@ fun Screen() {
             .padding(top = 30.dp, start = 10.dp, end = 10.dp)
     ) {
             Box {
+                // Botón para regresar a la vista anterior
                 IconButton(
                     onClick = {
+                        // Inicia la actividad principal cuando se presiona el botón
                         val intent = Intent(context, MainActivity::class.java)
                         context.startActivity(intent)
                     },
@@ -77,15 +80,18 @@ fun Screen() {
                     )
                 }
             }
+            // Contenedor para los elementos principales: campo de texto y botones
             Column(
                 modifier = Modifier.fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center) {
+                // Muestra el resultado del cálculo
                 Text(
                     text = result,
                     fontSize = 30.sp
                 )
                 Spacer(modifier = Modifier.height(16.dp))
+                // Campo de texto para ingresar el sueldo
                 TextField(
                     value = salario,
                     onValueChange = { salario = it },
@@ -95,7 +101,9 @@ fun Screen() {
                     )
                 )
                 Spacer(modifier = Modifier.height(16.dp))
+                // Botón para calcular el sueldo líquido
                 Button(onClick = {
+                    // Convierte el sueldo ingresado a Double y calcula el sueldo líquido
                     val salario = salario.toDoubleOrNull() ?: 0.0
                     val calcular = EmpleadoHonorarios(salario).calcularLiquido()
                     result = "El suedo es: $calcular"

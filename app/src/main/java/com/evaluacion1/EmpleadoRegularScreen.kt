@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
-class EmployeeCalculationScreen : AppCompatActivity() {
-    @SuppressLint("WrongViewCast")
+class EmpleadoRegularScreen : AppCompatActivity() {
+    @SuppressLint("WrongViewCast", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,11 +23,9 @@ class EmployeeCalculationScreen : AppCompatActivity() {
 
         btnSubmit.setOnClickListener {
             val inputText = inputFiled.text.toString()
-
-            val salario = inputText.toDouble() ?: 0.0
-            val calcular = RegularEmployee(salario).calcularLiquido()
-
-            textViewResult.text = "Resultado: $calcular";
+            val salario = inputText.toDouble()
+            val calcular = EmpleadoRegular(salario).calcularLiquido()
+            textViewResult.text = "Resultado: $calcular"
         }
 
 
@@ -35,10 +33,5 @@ class EmployeeCalculationScreen : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
-
-
-
-
         }
     }

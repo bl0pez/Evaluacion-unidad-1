@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Evaluacion1"
         tools:targetApi="31">
         <activity
-            android:name=".EmployeeCalculationScreen"
+            android:name=".EmpleadoRegularScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity

@@ -50,7 +50,7 @@ fun HomeScreen() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = {
-            val intent = Intent(context, EmployeeCalculationScreen::class.java)
+            val intent = Intent(context, EmpleadoRegularScreen::class.java)
             context.startActivity(intent)
         }) {
             Text(text = "Cálculo Regular")
